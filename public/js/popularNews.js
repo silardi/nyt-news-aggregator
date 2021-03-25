@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', getNews);
-const baseUrl = "https://nyt-news-aggregator.herokuapp.com/popular?timeRange=";
+const baseURL = "https://nyt-news-aggregator.glitch.me/popular?timeRange=";
 
 function getNews(){
   document.getElementById('formSubmit').addEventListener('click', function (event) {
     const req = new XMLHttpRequest();
     const range = document.getElementById('range').value;
-    req.open('GET', baseUrl + range, true);
+    req.open('GET', baseURL + range, true);
 
     req.addEventListener('load', function () {
       if (req.status >= 200 && req.status < 400) {
